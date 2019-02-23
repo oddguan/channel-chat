@@ -12,14 +12,14 @@ const user_reducer = (state = initialUserState, action) => {
       return {
         currentUser: action.payload.currentUser,
         isLoading: false,
-      }
+      };
     default:
       return state;
   }
 };
- 
+
 const rootReducer = combineReducers({
-  user:user_reducer,
+  user: user_reducer,
 });
 
 export default rootReducer;

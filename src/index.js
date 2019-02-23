@@ -8,7 +8,12 @@ import firebase from './firebase';
 
 import 'semantic-ui-css/semantic.min.css';
 
-import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom'; 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  withRouter,
+} from 'react-router-dom';
 
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
@@ -25,21 +30,26 @@ class Root extends React.Component {
         this.props.setUser(user);
         this.props.history.push('/');
       }
-    })
+    });
   }
 
   render() {
     return (
-        <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-        </Switch>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+      </Switch>
     );
   }
 }
 
-const RootWithAuth = withRouter(connect(null, { setUser })(Root)); // a higher order component to wrap the the root component
+const RootWithAuth = withRouter(
+  connect(
+    null,
+    { setUser }
+  )(Root)
+); // a higher order component to wrap the the root component
 
 ReactDOM.render(
   <Provider store={store}>
@@ -47,5 +57,6 @@ ReactDOM.render(
       <RootWithAuth />
     </Router>
   </Provider>,
-document.getElementById('root'));
+  document.getElementById('root')
+);
 registerServiceWorker();
