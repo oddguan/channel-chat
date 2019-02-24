@@ -81,7 +81,7 @@ class Register extends React.Component {
               displayName: this.state.username,
               photoURL: `http://gravatar.com/avatar/${md5(
                 createdUser.user.email
-              )}?d=indenticon`,
+              )}?d=identicon`,
             })
             .then(() => {
               // this.setState({ loading: false });
