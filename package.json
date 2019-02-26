@@ -2,6 +2,7 @@
   "name": "react-slack-clone",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://oddguan.github.io/Lemon-Chat",
   "dependencies": {
     "emoji-mart": "^2.9.2",
     "firebase": "^5.8.4",
@@ -25,6 +26,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build" 
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
